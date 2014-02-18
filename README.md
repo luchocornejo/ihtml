@@ -4,6 +4,8 @@ ihtml
 servidor html para node.js permite visualizar paginas en html incluyendo sus imagenes, hojas de estilo y codigo javascript. Ademas permite hacer "include" de otros html
 
 
+ihtml
+
 Es una aplicacion realizada para la plataforma node.js
 Esta aplicacion permite servir multiples archivos, tales como:
 
@@ -26,26 +28,26 @@ Es sencillo simplemente se usa un par de símbolos para indicar que se incluirá
 **************************
 index.html
 **************************
-<html>
-<head>
-<title></title>
-</head>
-<body>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-  <h1>Debajo se incluirá un archivo html diferente</h1>
+  &lt;h1&gt;Debajo se incluirá un archivo html diferente&lt;/h1&gt;
 
-  <|i contenido.html |>
+  &lt;|i contenido.html |&gt;
 
-  <p>Tan sencillo como eso</p>
+  &lt;p&gt;Tan sencillo como eso&lt;/p&gt;
 
-</body>
-</html>
+&lt;/body&gt;
+&lt;/html&gt;
 
 **************************
 contenido.html
 **************************
-<h3>Producto A</h3>
-<p>Esta es una descripcion del primer producto</p>
+&lt;h3&gt;Producto A&lt;/h3&gt;
+&lt;p&gt;Esta es una descripcion del primer producto&lt;/p&gt;
 
 
 Si usamos plantillas entonces nos sera facil usar moldes o datos dummy:
@@ -53,13 +55,13 @@ Si usamos plantillas entonces nos sera facil usar moldes o datos dummy:
 **************************
 contenido.html  (modificado para plantilla)
 **************************
-  <h3>{producto}</h3>
-  <p>{descripcion}</p>
+  &lt;h3&gt;{producto}&lt;/h3&gt;
+  &lt;p&gt;{descripcion}&lt;/p&gt;
 
 
 con este codigo:
 
-<|i contenido.html@{"repetir":4, "data":"contenido.json"} |>
+&lt;|i contenido.html@{"repetir":4, "data":"contenido.json"} |&gt;
 
 significa que el archivo contenido.html se incluira 4 veces y usara los datos del archivo json referido.
 **************************
@@ -79,25 +81,26 @@ El resultado sera:
 **************************
 index.html (aplicando el cambio)
 **************************
-<html>
-<head>
-<title></title>
-</head>
-<body>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-  <h1>Debajo se incluirá un archivo html diferente</h1>
+  &lt;h1&gt;Debajo se incluirá un archivo html diferente&lt;/h1&gt;
 
-  <h3>Producto A</h3>
-  <p>Esta es una descripcion del primer producto.</p>
+  &lt;h3&gt;Producto A&lt;/h3&gt;
+  &lt;p&gt;Esta es una descripcion del primer producto.&lt;/p&gt;
 
-  <h3>Producto B</h3>
-  <p>Esta es una descripcion del segundo producto.</p>
+  &lt;h3&gt;Producto B&lt;/h3&gt;
+  &lt;p&gt;Esta es una descripcion del segundo producto.&lt;/p&gt;
 
-  <h3>Producto C</h3>
-  <p>Esta es una descripcion del tercer producto.</p>
+  &lt;h3&gt;Producto C&lt;/h3&gt;
+  &lt;p&gt;Esta es una descripcion del tercer producto.&lt;/p&gt;
 
-  <p>Tan sencillo como eso</p>
+  &lt;p&gt;Tan sencillo como eso&lt;/p&gt;
 
-</body>
-</html>
+&lt;/body&gt;
+&lt;/html&gt;
+
 
